@@ -176,14 +176,14 @@ http://localhost:8000/polls/observer_capture/<id_capture>
 
 ### EXPERT
 
-http://localhost:8000/expert/observer_capture/
+http://localhost:8000/polls/expert/observer_capture/
 
-http://localhost:8000/expert/observe_capture/<id_capture>
+http://localhost:8000/polls/expert/observe_capture/<id_capture>
 
-http://localhost:8000/expert/delete_capture/<id_capture>
+http://localhost:8000/polls/expert/delete_capture/<id_capture>
 
-http://localhost:8000/expert/demarrer_capture/
+http://localhost:8000/polls/expert/demarrer_capture/
 
-http://localhost:8000/expert/enregistrer_capture/
+http://localhost:8000/polls/expert/enregistrer_capture/
 
-http://localhost:8000/expert/captures_courantes/
+http://localhost:8000/polls/expert/captures_courantes/

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer la capture</title>
+</head>
+<body>
+    <h1>Supprimer la capture {{ capture.id }}</h1>
+    <p>Êtes-vous sûr de vouloir supprimer cette capture ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="delete" value="Oui, supprimer">
+        <a href="{% url 'polls:expert_observer_capture' %}">Annuler</a>
+    </form>
+</body>
+</html>

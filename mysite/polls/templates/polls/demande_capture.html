@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demande de capture</title>
+</head>
+<body>
+    <h1>Demande de capture</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.interface_de_capture.id_for_label }}">Interface de capture :</label>
+            <select name="interface" id="interface">
+                <option value="enp0s3">enp0s3</option>
+                <option value="enp0s8">enp0s8</option>
+                <option value="lto">lto</option>
+            </select>
+            <!-- <select name="{{ form.interface_de_capture.name }}" id="{{ form.interface_de_capture.id_for_label }}"> -->
+                <!-- {% for interface in interfaces %} -->
+                <!--    <option value="{{ interface }}">{{ interface }}</option> -->
+                <!-- {% endfor %} -->
+            <!-- </select> -->
+        </div>
+        <div>
+            <label for="{{ form.nb_paquets_a_capturer.id_for_label }}">Nombre de paquets à capturer :</label>
+            {{ form.nb_paquets_a_capturer }}
+            <input type="number" name="nb_paquets_a_capturer" value="8">
+        </div>
+        <div>
+            <label for="{{ form.filtre.id_for_label }}">Filtres :</label>
+            <select name="filtres" id="filtres">
+                <option value="TCP/IP">TCP/IP</option>
+            </select>
+            <!-- <select multiple name="{{ form.filtre.name }}" id="{{ form.filtre.id_for_label }}">
+                {% for proto in listProtos %}
+                    <option value="{{ proto }}">{{ proto }}</option>
+                {% endfor %}
+            </select> -->
+        </div>
+        <div>
+            <label for="{{ form.analyste_id.id_for_label }}">Identifiant de l'analyste :</label>
+            {{ form.analyste_id }}
+            <select name="analyste_id" id="analyste_id">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div>
+            <label for="{{ form.expert_id.id_for_label }}">Identifiant de l'expert :</label>
+            {{ form.expert_id }}
+            <select name="expert_id" id="expert_id">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div>
+            <label for="{{ form.etat_demande.id_for_label }}">Etat de la demande :</label>
+            {{ form.etat_demande }}
+            <select name="etat_demande" id="etat_demande">
+                <option value="Acceptée">Acceptée</option>
+                <option value="En attente">En attente</option>
+                <option value="Refusée">Refusée</option>
+            </select>
+        </div>
+        <div>
+            <label for="{{ form.date_demande.id_for_label }}">Date de la demande :</label>
+            {{ form.date_demande }}
+            <input type="date" name="date_demande" value="2023-07-30">
+        </div>
+        <div>
+            <label for="{{ form.heure_debut_captures.id_for_label }}">Heure de début des captures :</label>
+            {{ form.heure_debut_captures }}
+            <input type="time" name="heure_debut_captures" value="08:00">
+        </div>
+        <div>
+            <label for="{{ form.heure_fin_captures.id_for_label }}">Heure de fin des captures :</label>
+            {{ form.heure_fin_captures }}
+            <input type="time" name="heure_fin_captures" value="18:00">
+        </div>
+        <div>
+            <label for="{{ form.description.id_for_label }}">Description :</label>
+            {{ form.description }}
+            <textarea name="description">Demande de capture pour analyse du trafic réseau</textarea>
+        </div>
+        <button type="submit">Envoyer la demande</button>
+    </form>
+</body>
+</html>

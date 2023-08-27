@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Observer les captures</title>
+</head>
+<body>
+    <h1>Observer les captures à supprimer</h1>
+    <ul>
+        {% for capture in captures %}
+            <li>
+                Capture {{ capture.id }} - Statut : {{ capture.statut }} - Interface : {{ capture.interface_de_capture }}
+                - <a href="{% url 'polls:expert_observe_capture' capture.id %}">Observer</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

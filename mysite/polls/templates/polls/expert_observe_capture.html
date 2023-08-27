@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Observer une capture</title>
+</head>
+<body>
+    <h1>Observer la capture {{ capture.id }}</h1>
+
+    <p>Statut : {{ capture.statut }}</p>
+    <p>Interface de capture : {{ capture.interface_de_capture }}</p>
+    <p>Nombre de paquets à capturer : {{ capture.nb_paquets_a_capturer }}</p>
+    <p>Filtres : {{ capture.filtres }}</p>
+    <p>État de la demande : {{ capture.etat_demande }}</p>
+    <p>Date de la demande : {{ capture.date_demande }}</p>
+    <p>Heure de début de la capture : {{ capture.heure_debut_captures }}</p>
+    <p>Heure de fin de la capture : {{ capture.heure_fin_captures }}</p>
+    <p>Description : {{ capture.description }}</p>
+    <p>Analyste : {{ capture.analyst }}</p>
+    <p>Expert : {{ capture.expert }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" name="delete" value="Supprimer">
+    </form>
+
+    <a href="{% url 'polls:expert_observer_capture' %}">Retour à la liste des captures</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Démarrer la capture</title>
+</head>
+<body>
+    <h1>Démarrer la capture</h1>
+    {% if capture_started %}
+        <p>La capture est en cours...</p>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Démarrer la capture</button>
+        </form>
+    {% endif %}
+
+    {% if captured_packets %}
+        <h2>Résultat de la capture</h2>
+        <ul>
+            {% for packet in captured_packets %}
+                <li>{{ packet }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

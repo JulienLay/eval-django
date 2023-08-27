@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enregistrer une Capture</title>
+</head>
+<body>
+    <h1>Enregistrer une Capture</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.analyste.id_for_label }}">Analyste :</label>
+            {{ form.analyste }}
+        </div>
+        <div>
+            <label for="{{ form.expert.id_for_label }}">Expert :</label>
+            {{ form.expert }}
+        </div>
+        <div>
+            <label for="{{ form.interface_de_capture.id_for_label }}">Interface de capture :</label>
+            {{ form.interface_de_capture }}
+        </div>
+        <div>
+            <label for="{{ form.nb_paquets_a_capturer.id_for_label }}">Nombre de paquets à capturer :</label>
+            {{ form.nb_paquets_a_capturer }}
+        </div>
+        <div>
+            <label for="{{ form.filtres.id_for_label }}">Filtres :</label>
+            {{ form.filtres }}
+        </div>
+        <div>
+            <label for="{{ form.etat_demande.id_for_label }}">État de la demande :</label>
+            {{ form.etat_demande }}
+        </div>
+        <div>
+            <label for="{{ form.date_demande.id_for_label }}">Date de la demande :</label>
+            {{ form.date_demande }}
+        </div>
+        <div>
+            <label for="{{ form.heure_debut_captures.id_for_label }}">Heure de début de la capture :</label>
+            {{ form.heure_debut_captures }}
+        </div>
+        <div>
+            <label for="{{ form.heure_fin_captures.id_for_label }}">Heure de fin de la capture :</label>
+            {{ form.heure_fin_captures }}
+        </div>
+        <div>
+            <label for="{{ form.description.id_for_label }}">Description :</label>
+            {{ form.description }}
+        </div>
+        <button type="submit">Enregistrer Capture</button>
+    </form>
+</body>
+</html>

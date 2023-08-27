@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Captures Courantes</title>
+</head>
+<body>
+    <h1>Captures Courantes</h1>
+    {% if captures %}
+        <ul>
+            {% for capture in captures %}
+                <li>{{ capture.interface_de_capture }} - {{ capture.etat_demande }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucune capture courante.</p>
+    {% endif %}
+</body>
+</html>
